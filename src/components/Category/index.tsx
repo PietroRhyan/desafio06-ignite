@@ -17,6 +17,7 @@ export function Category({ image, title }: CategoryProps) {
       justifyContent='center'
       gap='6'
       cursor='pointer'
+      w='145px'
     >
       <Image 
         src={image}

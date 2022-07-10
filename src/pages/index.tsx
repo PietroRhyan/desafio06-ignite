@@ -5,6 +5,7 @@ import { Box, Flex, Divider, Heading } from "@chakra-ui/react";
 import { Header } from "../components/Header";
 import { BannerIndex } from "../components/BannerIndex";
 import { Category } from "../components/Category";
+import { Slider } from "../components/Slider";
 
 const Home: NextPage = () => {
   return (
@@ -28,7 +29,6 @@ const Home: NextPage = () => {
           borderColor='gray.900'
           w="90px"
           mx="auto"
-          mb="52px"
         />
 
         <Heading
@@ -36,10 +36,17 @@ const Home: NextPage = () => {
           fontWeight="medium"
           fontSize="4xl"
           lineHeight="base"
+          my="52px"
         >
           Vamos nessa? <br />
           Então escolha seu continente
         </Heading>
+
+        <Box
+          mb='40px'
+        >
+          <Slider />
+        </Box>
       </Box>
     </>
   );
