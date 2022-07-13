@@ -2,6 +2,8 @@ import { GetStaticProps, GetStaticPaths } from "next";
 
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
+import { ContinentInfo } from "../../components/ContinentInfo";
+import { Countries } from "../../components/Countries";
 
 interface ContinentPageProps {
   selectedContinent: {
@@ -12,9 +14,9 @@ interface ContinentPageProps {
       {
         country_img: string;
         country_name: string;
-        capital: string;
+        city: string;
         country_icon: string;
-      }
+      },
     ];
   };
 }
@@ -48,16 +50,25 @@ export default function ContinentPage({
       </Box>
 
       <Box className="container">
-        <Flex mt='80px'>
+        <Flex w='100%' my='80px' justifyContent='space-between'>
           <Box w='600px'>
             <Text fontWeight='normal' fontSize='2xl' color='gray.900' textAlign='justify'>
               {selectedContinent.intro}
             </Text>
           </Box>
 
-          <Flex>
-            
+          <Flex alignItems='center' justifyContent='flex-end' gap='12'>
+            <ContinentInfo value={50} title='países' />
+            <ContinentInfo value={60} title='línguas' />
+            <ContinentInfo value={27} title='cidades +100' hasTooltip />
           </Flex>
+        </Flex>
+
+        <Heading fontSize='4xl' fontWeight='medium'>Cidades +100</Heading>
+        <Flex>
+          {selectedContinent.countries.map((country) => (
+            <Countries key={country.city} image={country.country_img} name={country.country_name} city={country.city} icon={country.country_icon}/>
+          ))}
         </Flex>
       </Box>
     </>
@@ -79,7 +90,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
         "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano. Existem duas formas de classificar esse continente: a primeira considera que a América do Norte é apenas a parte mais setentrional da América, separada da América Central na fronteira entre o México e a Guatemala, a segunda classificação reconhece apenas uma América do Norte e uma América do Sul.",
       img: "/images/northAmerica.jpg",
       countries: [
-        { country_img: "", country_name: "", capital: "", country_icon: "" },
+        { country_img: "images/ottawa.jpg", country_name: "Canadá", city: "Ottawa", country_icon: "icons/canada.png"},
       ],
     },
     americaCentral: {
@@ -87,7 +98,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/centralAmerica.jpg",
       countries: [
-        { country_img: "", country_name: "", capital: "", country_icon: "" },
+        { country_img: "", country_name: "", city: "", country_icon: "" },
       ],
     },
 
@@ -96,7 +107,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/southAmerica.jpg",
       countries: [
-        { country_img: "", country_name: "", capital: "", country_icon: "" },
+        { country_img: "", country_name: "", city: "", country_icon: "" },
       ],
     },
 
@@ -105,7 +116,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/asia.jpg",
       countries: [
-        { country_img: "", country_name: "", capital: "", country_icon: "" },
+        { country_img: "", country_name: "", city: "", country_icon: "" },
       ],
     },
 
@@ -114,7 +125,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/africa.jpg",
       countries: [
-        { country_img: "", country_name: "", capital: "", country_icon: "" },
+        { country_img: "", country_name: "", city: "", country_icon: "" },
       ],
     },
 
@@ -123,7 +134,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/europe.jpg",
       countries: [
-        { country_img: "", country_name: "", capital: "", country_icon: "" },
+        { country_img: "", country_name: "", city: "", country_icon: "" },
       ],
     },
 
@@ -132,7 +143,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/oceania.jpg",
       countries: [
-        { country_img: "", country_name: "", capital: "", country_icon: "" },
+        { country_img: "", country_name: "", city: "", country_icon: "" },
       ],
     },
   };
