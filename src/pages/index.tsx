@@ -42,11 +42,7 @@ const Home: NextPage = () => {
           Então escolha seu continente
         </Heading>
 
-        <Box
-          mb='40px'
-        >
-          <Slider />
-        </Box>
+        <Slider />
       </Box>
     </>
   );

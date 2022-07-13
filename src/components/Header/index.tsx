@@ -9,8 +9,7 @@ export function Header() {
       w='100%'
       p='5'
       align='center'
-      justifyContent='center'
-      
+      justifyContent='center'      
     >
       <Image src='images/logo.svg'/>
     </Flex>

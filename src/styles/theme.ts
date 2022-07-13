@@ -28,6 +28,7 @@ export const theme = extendTheme({
 
         '.container': {
           mx: '140px',
+          mb: '40px',
         }
       }
     }
