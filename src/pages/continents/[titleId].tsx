@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from "next";
 
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text, Grid, GridItem } from "@chakra-ui/react";
 import { Header } from "../../components/Header";
 import { ContinentInfo } from "../../components/ContinentInfo";
 import { Countries } from "../../components/Countries";
@@ -65,11 +65,13 @@ export default function ContinentPage({
         </Flex>
 
         <Heading fontSize='4xl' fontWeight='medium'>Cidades +100</Heading>
-        <Flex>
+        <Grid mt='40px' templateColumns='repeat(4, 1fr)' gap={4} >    
           {selectedContinent.countries.map((country) => (
-            <Countries key={country.city} image={country.country_img} name={country.country_name} city={country.city} icon={country.country_icon}/>
+            <GridItem key={country.city} >
+              <Countries  image={country.country_img} name={country.country_name} city={country.city} icon={country.country_icon}/>
+            </GridItem>
           ))}
-        </Flex>
+        </Grid>
       </Box>
     </>
   );
@@ -90,7 +92,11 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
         "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano. Existem duas formas de classificar esse continente: a primeira considera que a América do Norte é apenas a parte mais setentrional da América, separada da América Central na fronteira entre o México e a Guatemala, a segunda classificação reconhece apenas uma América do Norte e uma América do Sul.",
       img: "/images/northAmerica.jpg",
       countries: [
-        { country_img: "images/ottawa.jpg", country_name: "Canadá", city: "Ottawa", country_icon: "icons/canada.png"},
+        { country_img: "/images/countries/ottawa.jpg", country_name: "Canadá", city: "Ottawa", country_icon: "/icons/canada.png"},
+        { country_img: "/images/countries/toronto.jpg", country_name: "Canadá", city: "Toronto", country_icon: "/icons/canada.png"},
+        { country_img: "/images/countries/lasVegas.jpg", country_name: "Estados Unidos", city: "Las Vegas", country_icon: "/icons/us.png"},
+        { country_img: "/images/countries/sanFrancisco.jpg", country_name: "Estados Unidos", city: "San Francisco", country_icon: "/icons/us.png"},
+        { country_img: "/images/countries/guanajuato.jpg", country_name: "México", city: "Guanajuato", country_icon: "/icons/mexico.png"},
       ],
     },
     americaCentral: {

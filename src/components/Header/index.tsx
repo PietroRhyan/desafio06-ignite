@@ -11,7 +11,7 @@ export function Header() {
       align='center'
       justifyContent='center'      
     >
-      <Image src='images/logo.svg'/>
+      <Image src='/images/logo.svg'/>
     </Flex>
   )
 }
