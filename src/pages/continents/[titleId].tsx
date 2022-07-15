@@ -26,7 +26,7 @@ export default function ContinentPage({
 }: ContinentPageProps) {
   return (
     <>
-      <Header />
+      <Header hasBackButton />
 
       <Box w="100%" h="500px" position="relative">
         <Image
@@ -92,19 +92,21 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
         "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano. Existem duas formas de classificar esse continente: a primeira considera que a América do Norte é apenas a parte mais setentrional da América, separada da América Central na fronteira entre o México e a Guatemala, a segunda classificação reconhece apenas uma América do Norte e uma América do Sul.",
       img: "/images/northAmerica.jpg",
       countries: [
-        { country_img: "/images/countries/ottawa.jpg", country_name: "Canadá", city: "Ottawa", country_icon: "/icons/canada.png"},
-        { country_img: "/images/countries/toronto.jpg", country_name: "Canadá", city: "Toronto", country_icon: "/icons/canada.png"},
-        { country_img: "/images/countries/lasVegas.jpg", country_name: "Estados Unidos", city: "Las Vegas", country_icon: "/icons/us.png"},
-        { country_img: "/images/countries/sanFrancisco.jpg", country_name: "Estados Unidos", city: "San Francisco", country_icon: "/icons/us.png"},
-        { country_img: "/images/countries/guanajuato.jpg", country_name: "México", city: "Guanajuato", country_icon: "/icons/mexico.png"},
+        { country_img: "/images/cities/ottawa.jpg", country_name: "Canadá", city: "Ottawa", country_icon: "/icons/canada.png"},
+        { country_img: "/images/cities/toronto.jpg", country_name: "Canadá", city: "Toronto", country_icon: "/icons/canada.png"},
+        { country_img: "/images/cities/lasVegas.jpg", country_name: "Estados Unidos", city: "Las Vegas", country_icon: "/icons/us.png"},
+        { country_img: "/images/cities/sanFrancisco.jpg", country_name: "Estados Unidos", city: "San Francisco", country_icon: "/icons/us.png"},
+        { country_img: "/images/cities/guanajuato.jpg", country_name: "México", city: "Guanajuato", country_icon: "/icons/mexico.png"},
       ],
     },
+
     americaCentral: {
       title: "América Central",
       intro: "",
       img: "/images/centralAmerica.jpg",
       countries: [
-        { country_img: "", country_name: "", city: "", country_icon: "" },
+        { country_img: "/images/cities/sanJose.jpg", country_name: "Costa Rica", city: "San Jose", country_icon: "/icons/costa-rica.png" },
+        { country_img: "/images/cities/sanPedroSula.jpg", country_name: "Honduras", city: "San Pedro Sula", country_icon: "/icons/honduras.png" },
       ],
     },
 
@@ -113,7 +115,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/southAmerica.jpg",
       countries: [
-        { country_img: "", country_name: "", city: "", country_icon: "" },
+        { country_img: "/images/cities/rio.jpg", country_name: "Brasil", city: "Rio de Janeiro", country_icon: "/icons/brazil.png" },
+        { country_img: "/images/cities/buenos.jpg", country_name: "Argentina", city: "Buenos Aires", country_icon: "/icons/argentina.png" },
       ],
     },
 
@@ -122,7 +125,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/asia.jpg",
       countries: [
-        { country_img: "", country_name: "", city: "", country_icon: "" },
+        { country_img: "/images/cities/singapore.jpg", country_name: "Singapura", city: "Singapura", country_icon: "/icons/singapore.png" },
+        { country_img: "/images/cities/tokio.jpg", country_name: "Japão", city: "Tokio", country_icon: "/icons/japan.png" },
       ],
     },
 
@@ -131,7 +135,8 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
       intro: "",
       img: "/images/africa.jpg",
       countries: [
-        { country_img: "", country_name: "", city: "", country_icon: "" },
+        { country_img: "/images/cities/cairo.jpg", country_name: "Egito", city: "Cairo", country_icon: "/icons/egypt.png" },
+        { country_img: "/images/cities/lagos.jpg", country_name: "Nigéria", city: "Lagos", country_icon: "/icons/nigeria.png" },
       ],
     },
 

@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text, Tooltip } from '@chakra-ui/react'
-import InfoOutlineIcon from '@chakra-ui/icon'
+import { InfoOutlineIcon } from '@chakra-ui/icons'
 
 type ContinentInfoProps = {
   value: number,

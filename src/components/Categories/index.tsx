@@ -9,7 +9,7 @@ interface CategoryProps {
   title: string,
 }
 
-export function Category({ image, title }: CategoryProps) {
+export function Categories({ image, title }: CategoryProps) {
   return (
     <Flex
       flexDirection='column'
@@ -17,7 +17,7 @@ export function Category({ image, title }: CategoryProps) {
       justifyContent='center'
       gap='6'
       cursor='pointer'
-      w='145px'
+      w='158px'
     >
       <Image 
         src={image}
