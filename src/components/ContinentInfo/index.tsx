@@ -10,10 +10,10 @@ type ContinentInfoProps = {
 export function ContinentInfo({ value, title, hasTooltip }: ContinentInfoProps) {
   return (
     <Flex direction='column' alignItems='center' justifyContent='center'>
-      <Heading fontWeight='bold' fontSize='5xl' color='yellow.500'>{value}</Heading>
+      <Heading fontWeight='bold' fontSize={{base: '2xl', md: '5xl'}} color='yellow.500'>{value}</Heading>
       
       <Box display='flex' alignItems='center' justifyContent='center' gap='1'>
-        <Text fontWeight='bold' fontSize='2xl' display='inline'>{title}</Text>
+        <Text fontWeight='medium' fontSize={{base: 'lg', md: '2xl'}} display='inline'>{title}</Text>
         {hasTooltip && (
           <Tooltip label='Mais de cem cidades para você explorar!'>
             <InfoOutlineIcon />

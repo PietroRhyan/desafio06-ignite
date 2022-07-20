@@ -29,8 +29,8 @@ export const theme = extendTheme({
         color: 'gray.900',
 
         '.container': {
-          mx: '140px',
-          mb: '40px',
+          mx: { base: '4', md: '140px'},
+          // mb: { base: '6', md: '40px'}
         }
       }
     }

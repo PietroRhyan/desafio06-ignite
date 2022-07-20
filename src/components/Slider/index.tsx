@@ -34,7 +34,7 @@ export function Slider() {
               <Image
                 src={slide.img}
                 alt={slide.title}
-                h="450px"
+                h={{base: '375px', md: '450px'}}
                 w="100%"
                 filter="brightness(0.4)"
                 objectFit="cover"
@@ -51,10 +51,10 @@ export function Slider() {
                 justifyContent='center'
                 gap='4'
               >
-                <Heading fontSize="5xl" fontWeight="bold" color="gray.100">
+                <Heading fontSize={{base: '2xl', md: '3xl', lg: '5xl'}} textAlign='center' fontWeight="bold" color="gray.100">
                   {slide.title}
                 </Heading>
-                <Text fontSize='2xl' fontWeight='bold' color='gray.100' textAlign='center'>
+                <Text fontSize={{base: 'sm', md: 'md', lg: '2xl'}} fontWeight='bold' color='gray.100' textAlign='center'>
                   {slide.subtitle}
                 </Text>
               </Box>

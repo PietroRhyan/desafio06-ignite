@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 
-import { Box, Flex, Divider, Heading } from "@chakra-ui/react";
+import { Box, Flex, Divider, Heading, useBreakpointValue } from "@chakra-ui/react";
 
 import { Header } from "../components/Header";
 import { BannerIndex } from "../components/BannerIndex";
@@ -8,13 +8,18 @@ import { Categories } from "../components/Categories";
 import { Slider } from "../components/Slider";
 
 const Home: NextPage = () => {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true,
+  });
+
   return (
     <>
       <Header />
       <BannerIndex />
 
       <Box className="container">
-        <Flex w="100%" align="center" justifyContent="space-between" mb="80px">
+        <Flex w="100%" align="center" gap={ isWideVersion ? 'none' : '4' } flexWrap={ isWideVersion ? 'unset' : 'wrap' } justifyContent={ isWideVersion ? 'space-between' : 'space-evenly'} mb="80px">
           <Categories image="images/cocktail.svg" title="vida noturna" />
           <Categories image="images/surf.svg" title="praia" />
           <Categories image="images/building.svg" title="moderno" />
@@ -34,7 +39,7 @@ const Home: NextPage = () => {
         <Heading
           textAlign="center"
           fontWeight="medium"
-          fontSize="4xl"
+          fontSize={{ base: '2xl', md: '4xl' }}
           lineHeight="base"
           my="52px"
         >
@@ -42,8 +47,10 @@ const Home: NextPage = () => {
           Então escolha seu continente
         </Heading>
 
-        <Slider />
       </Box>
+        <Box w='100%' mb={{ base: '6', md: '40px'}} px={{base: '0', md: '100px'}} >
+          <Slider />
+        </Box>
     </>
   );
 };

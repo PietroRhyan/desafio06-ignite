@@ -28,20 +28,22 @@ export default function ContinentPage({
     <>
       <Header hasBackButton />
 
-      <Box w="100%" h="500px" position="relative">
+      <Box w="100%" h={{base: '375px', md: '500px'}} position="relative">
         <Image
           src={selectedContinent.img}
           w="100%"
-          h="500px"
+          h={{base: '375px', md: "500px"}}
           objectFit="cover"
           objectPosition="center"
           filter="brightness(0.6)"
         />
         <Heading
           position="absolute"
-          left="140px"
-          bottom="60px"
-          fontSize="5xl"
+          left={{base: '50%', md: '140px'}}
+          bottom={{base: '50%', md: "60px"}}
+          transform={{base: 'translate(-50%, -50%)', md: 'none'}}
+          textAlign='center'
+          fontSize={{base: '3xl', md: '5xl'}}
           fontWeight="bold"
           color="gray.100"
         >
@@ -50,14 +52,14 @@ export default function ContinentPage({
       </Box>
 
       <Box className="container">
-        <Flex w='100%' my='80px' justifyContent='space-between'>
-          <Box w='600px'>
-            <Text fontWeight='normal' fontSize='2xl' color='gray.900' textAlign='justify'>
+        <Flex flexDirection={{base: 'column', lg: 'row'}} alignItems={{base: 'center', lg: 'normal'}} w='100%' my={{base: '6', md: '80px'}} gap={{base: '4', lg: 'auto'}} justifyContent='space-between'>
+          <Box w={{base: '100%', lg: '600px'}}>
+            <Text fontWeight='normal' fontSize={{base: 'sm', md: '2xl'}} color='gray.900' textAlign='justify'>
               {selectedContinent.intro}
             </Text>
           </Box>
 
-          <Flex alignItems='center' justifyContent='flex-end' gap='12'>
+          <Flex alignItems='center' justifyContent={{base: 'center', md: 'flex-end'}} gap='12'>
             <ContinentInfo value={50} title='países' />
             <ContinentInfo value={60} title='línguas' />
             <ContinentInfo value={27} title='cidades +100' hasTooltip />
