@@ -30,7 +30,7 @@ export const theme = extendTheme({
 
         '.container': {
           mx: { base: '4', md: '140px'},
-          // mb: { base: '6', md: '40px'}
+          mb: { base: '6', md: '40px'}
         }
       }
     }

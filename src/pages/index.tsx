@@ -1,6 +1,12 @@
 import type { NextPage } from "next";
 
-import { Box, Flex, Divider, Heading, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Divider,
+  Heading,
+  useBreakpointValue,
+} from "@chakra-ui/react";
 
 import { Header } from "../components/Header";
 import { BannerIndex } from "../components/BannerIndex";
@@ -19,7 +25,14 @@ const Home: NextPage = () => {
       <BannerIndex />
 
       <Box className="container">
-        <Flex w="100%" align="center" gap={ isWideVersion ? 'none' : '4' } flexWrap={ isWideVersion ? 'unset' : 'wrap' } justifyContent={ isWideVersion ? 'space-between' : 'space-evenly'} mb="80px">
+        <Flex
+          w="100%"
+          align="center"
+          gap={isWideVersion ? "none" : "4"}
+          flexWrap={isWideVersion ? "unset" : "wrap"}
+          justifyContent={isWideVersion ? "space-between" : "space-evenly"}
+          mb={{ base: "9", md: "80px" }}
+        >
           <Categories image="images/cocktail.svg" title="vida noturna" />
           <Categories image="images/surf.svg" title="praia" />
           <Categories image="images/building.svg" title="moderno" />
@@ -29,9 +42,9 @@ const Home: NextPage = () => {
 
         <Divider
           orientation="horizontal"
-          bg='gray.900'
-          border='2px'
-          borderColor='gray.900'
+          bg="gray.900"
+          border="2px"
+          borderColor="gray.900"
           w="90px"
           mx="auto"
         />
@@ -39,18 +52,21 @@ const Home: NextPage = () => {
         <Heading
           textAlign="center"
           fontWeight="medium"
-          fontSize={{ base: '2xl', md: '4xl' }}
+          fontSize={{ base: "2xl", md: "4xl" }}
           lineHeight="base"
           my="52px"
         >
           Vamos nessa? <br />
           Então escolha seu continente
         </Heading>
-
       </Box>
-        <Box w='100%' mb={{ base: '6', md: '40px'}} px={{base: '0', md: '100px'}} >
-          <Slider />
-        </Box>
+      <Box
+        w="100%"
+        mb={{ base: "6", md: "40px" }}
+        px={{ base: "0", md: "100px" }}
+      >
+        <Slider />
+      </Box>
     </>
   );
 };

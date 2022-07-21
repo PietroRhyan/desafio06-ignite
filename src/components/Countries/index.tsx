@@ -10,7 +10,7 @@ type CountriesProps = {
 export function Countries({ image, name, city, icon }: CountriesProps) {
   return (
     <Flex
-      w="250px"
+      w="233px"
       flexDirection="column"
       borderRadius="md"
       overflow="hidden"
